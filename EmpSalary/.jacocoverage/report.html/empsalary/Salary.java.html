@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Salary.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;EmpSalary&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">empsalary</a> &gt; <span class="el_source">Salary.java</span></div><h1>Salary.java</h1><pre class="source lang-java linenums">package empsalary;
+
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+
+<span class="fc" id="L6">public class Salary {</span>
+    
+    public double calculateSalary(Calculate gaji) {
+<span class="fc" id="L9">        double Salary = 0;</span>
+        double jamLembur;
+        double gajiLembur;
+        double totalPajak;
+        
+<span class="fc bfc" id="L14" title="All 2 branches covered.">        if(gaji instanceof Gol1){</span>
+<span class="fc" id="L15">            Gol1 gol1 = (Gol1) gaji;</span>
+<span class="fc" id="L16">            double gajiPokok = 1486500;</span>
+<span class="fc" id="L17">            double TPengabdi = 250000;</span>
+<span class="pc bpc" id="L18" title="1 of 2 branches missed.">            if (gol1.getJamKerja()&gt;173){</span>
+<span class="fc" id="L19">                jamLembur=gol1.getJamKerja()-173;	</span>
+            }else{
+<span class="nc" id="L21">                jamLembur=0;</span>
+            }
+<span class="fc" id="L23">            gajiLembur = jamLembur*20000;</span>
+<span class="fc" id="L24">            double pGajiPokok = 0.05*gajiPokok;</span>
+<span class="fc" id="L25">            double pGajiLembur = 0.05*gajiLembur;</span>
+<span class="fc" id="L26">            totalPajak = pGajiPokok + pGajiLembur;</span>
+<span class="fc" id="L27">            System.out.println(&quot;Gaji Pokok Golongan 1: Rp&quot;+gajiPokok);</span>
+<span class="fc" id="L28">            System.out.println(&quot;Gaji Lembur Golongan 1: Rp&quot;+gajiLembur);</span>
+<span class="fc" id="L29">            System.out.println(&quot;Pajak Gaji Pokok Golongan 1: Rp&quot;+pGajiPokok);</span>
+<span class="fc" id="L30">            System.out.println(&quot;Pajak Gaji Lembur Golongan 1: Rp&quot;+pGajiLembur);</span>
+<span class="fc" id="L31">            System.out.println(&quot;Total Pajak Golongan 1: Rp&quot;+totalPajak);            </span>
+<span class="fc" id="L32">            Salary = (gajiPokok+TPengabdi+gajiLembur)-totalPajak;</span>
+            
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        }else if(gaji instanceof Gol2){</span>
+<span class="fc" id="L35">            Gol2 gol2 = (Gol2) gaji;</span>
+<span class="fc" id="L36">            double gajiPokok = 1926000;</span>
+<span class="fc" id="L37">            double TPengabdi = 300000;</span>
+<span class="pc bpc" id="L38" title="1 of 2 branches missed.">            if (gol2.getJamKerja2()&gt;173){</span>
+<span class="fc" id="L39">                jamLembur=gol2.getJamKerja2()-173;	</span>
+            }else{
+<span class="nc" id="L41">                jamLembur=0;</span>
+            }
+<span class="fc" id="L43">            gajiLembur = jamLembur*20000;</span>
+<span class="fc" id="L44">            double pGajiPokok = 0.05*gajiPokok;</span>
+<span class="fc" id="L45">            double pGajiLembur = 0.05*gajiLembur;</span>
+<span class="fc" id="L46">            totalPajak = pGajiPokok + pGajiLembur;</span>
+<span class="fc" id="L47">            System.out.println(&quot;Gaji Pokok Golongan 2: Rp&quot;+gajiPokok);</span>
+<span class="fc" id="L48">            System.out.println(&quot;Gaji Lembur Golongan 2: Rp&quot;+gajiLembur);</span>
+<span class="fc" id="L49">            System.out.println(&quot;Pajak Gaji Pokok Golongan 2: Rp&quot;+pGajiPokok);</span>
+<span class="fc" id="L50">            System.out.println(&quot;Pajak Gaji Lembur Golongan 2: Rp&quot;+pGajiLembur);</span>
+<span class="fc" id="L51">            System.out.println(&quot;Total Pajak Golongan 2: Rp&quot;+totalPajak);</span>
+<span class="fc" id="L52">            Salary = (gajiPokok+TPengabdi+gajiLembur)-totalPajak;</span>
+            
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        }else if(gaji instanceof Gol3){</span>
+<span class="fc" id="L55">            Gol3 gol3 = (Gol3) gaji;</span>
+<span class="fc" id="L56">            double gajiPokok = 2456700;</span>
+<span class="fc" id="L57">            double TPengabdi = 350000;</span>
+<span class="pc bpc" id="L58" title="1 of 2 branches missed.">            if (gol3.getJamKerja3()&gt;173){</span>
+<span class="fc" id="L59">                jamLembur=gol3.getJamKerja3()-173;	</span>
+            }else{
+<span class="nc" id="L61">                jamLembur=0;</span>
+            }
+<span class="fc" id="L63">            gajiLembur = jamLembur*20000;</span>
+<span class="fc" id="L64">            double pGajiPokok = 0.05*gajiPokok;</span>
+<span class="fc" id="L65">            double pGajiLembur = 0.05*gajiLembur;</span>
+<span class="fc" id="L66">            totalPajak = pGajiPokok + pGajiLembur;</span>
+<span class="fc" id="L67">            System.out.println(&quot;Gaji Pokok Golongan 3: Rp&quot;+gajiPokok);</span>
+<span class="fc" id="L68">            System.out.println(&quot;Gaji Lembur Golongan 3: Rp&quot;+gajiLembur);</span>
+<span class="fc" id="L69">            System.out.println(&quot;Pajak Gaji Pokok Golongan 3: Rp&quot;+pGajiPokok);</span>
+<span class="fc" id="L70">            System.out.println(&quot;Pajak Gaji Lembur Golongan 3: Rp&quot;+pGajiLembur);</span>
+<span class="fc" id="L71">            System.out.println(&quot;Total Pajak Golongan 3: Rp&quot;+totalPajak);</span>
+<span class="fc" id="L72">            Salary = (gajiPokok+TPengabdi+gajiLembur)-totalPajak;</span>
+            
+<span class="pc bpc" id="L74" title="1 of 2 branches missed.">        }else if(gaji instanceof Gol4){</span>
+<span class="fc" id="L75">            Gol4 gol4 = (Gol4) gaji;</span>
+<span class="fc" id="L76">            double gajiPokok = 2899500;</span>
+<span class="fc" id="L77">            double TPengabdi = 400000;</span>
+<span class="pc bpc" id="L78" title="1 of 2 branches missed.">            if (gol4.getJamKerja4()&gt;173){</span>
+<span class="fc" id="L79">                jamLembur=gol4.getJamKerja4()-173;	</span>
+            }else{
+<span class="nc" id="L81">                jamLembur=0;</span>
+            }
+<span class="fc" id="L83">            gajiLembur = jamLembur*20000;</span>
+<span class="fc" id="L84">            double pGajiPokok = 0.05*gajiPokok;</span>
+<span class="fc" id="L85">            double pGajiLembur = 0.05*gajiLembur;</span>
+<span class="fc" id="L86">            totalPajak = pGajiPokok + pGajiLembur;</span>
+<span class="fc" id="L87">            System.out.println(&quot;Gaji Pokok Golongan 4: Rp&quot;+gajiPokok);</span>
+<span class="fc" id="L88">            System.out.println(&quot;Gaji Lembur Golongan 4: Rp&quot;+gajiLembur);</span>
+<span class="fc" id="L89">            System.out.println(&quot;Pajak Gaji Pokok Golongan 4: Rp&quot;+pGajiPokok);</span>
+<span class="fc" id="L90">            System.out.println(&quot;Pajak Gaji Lembur Golongan 4: Rp&quot;+pGajiLembur);</span>
+<span class="fc" id="L91">            System.out.println(&quot;Total Pajak Golongan 4: Rp&quot;+totalPajak);</span>
+<span class="fc" id="L92">            Salary = (gajiPokok+TPengabdi+gajiLembur)-totalPajak;</span>
+        }
+<span class="fc" id="L94">        return Salary;</span>
+    }
+    
+    public static void main(String[] args) {
+<span class="fc" id="L98">        Gol1 gol1 = new Gol1(180);</span>
+<span class="fc" id="L99">        Gol2 gol2 = new Gol2(180);</span>
+<span class="fc" id="L100">        Gol3 gol3 = new Gol3(180);</span>
+<span class="fc" id="L101">        Gol4 gol4 = new Gol4(180);</span>
+        
+//        DecimalFormat kursIndonesia = (DecimalFormat) DecimalFormat.getCurrencyInstance();
+//        DecimalFormatSymbols formatRp = new DecimalFormatSymbols();
+//        
+//        formatRp.setCurrencySymbol(&quot;Rp. &quot;);
+//        formatRp.setMonetaryDecimalSeparator(',');
+//        formatRp.setGroupingSeparator('.');
+//        kursIndonesia.setDecimalFormatSymbols(formatRp);
+//        
+//        System.out.println(&quot;Gaji Diterima        : &quot;+kursIndonesia.format(gol1));
+
+<span class="fc" id="L113">        Salary salaryObj = new Salary();</span>
+<span class="fc" id="L114">        System.out.println(&quot;Gaji Bersih Golongan 1: Rp&quot;+salaryObj.calculateSalary(gol1));</span>
+<span class="fc" id="L115">        System.out.println(&quot;-------------------------------------------------&quot;);</span>
+<span class="fc" id="L116">        System.out.println(&quot;Gaji Bersih Golongan 2: Rp&quot;+salaryObj.calculateSalary(gol2));</span>
+<span class="fc" id="L117">        System.out.println(&quot;-------------------------------------------------&quot;);</span>
+<span class="fc" id="L118">        System.out.println(&quot;Gaji Bersih Golongan 3: Rp&quot;+salaryObj.calculateSalary(gol3));</span>
+<span class="fc" id="L119">        System.out.println(&quot;-------------------------------------------------&quot;);</span>
+<span class="fc" id="L120">        System.out.println(&quot;Gaji Bersih Golongan 4: Rp&quot;+salaryObj.calculateSalary(gol4));</span>
+<span class="fc" id="L121">    }</span>
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
